@@ -1,10 +1,16 @@
 import React from 'react'
+import Item from './Item'
 
 const ListItem = ({item}) => {
+    
   return (
-    <li>
-        {JSON.stringify(item)}
-    </li>
+        <tr>
+            {Object.entries(item).map(([key, value]) => {
+            return (<Item
+            key={key}
+            value={value}/>)
+            })}
+        </tr>
   )
 }
 
